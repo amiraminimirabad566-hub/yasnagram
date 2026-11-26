@@ -1,42 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#6750d8"><title>یسناگرام | شبکه اجتماعی</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="یسناگرام، شبکه اجتماعی برای ارتباط و اشتراک‌گذاری">
+  <title>یسناگرام | شبکه اجتماعی</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="topbar">
-  <a class="brand" href="#">یسناگرام<span>●</span></a>
-  <nav><a href="#feed">خانه</a><a href="#explore">کاوش</a><a href="#profile">پروفایل</a></nav>
-  <button id="authOpen" class="outline">ورود / ثبت‌نام</button>
-</header>
-<main class="layout">
-  <aside class="side card">
-    <div class="avatar">ی</div><h3>به یسناگرام خوش آمدی</h3>
-    <p class="muted">یک جامعه برای ارتباط، خلاقیت و اشتراک‌گذاری.</p>
-    <a class="side-link" href="#feed">⌂ فید</a><a class="side-link" href="#explore">⌕ کاوش</a><a class="side-link" href="#profile">◎ پروفایل</a>
-    <p class="tiny">قوانین جامعه: احترام، امنیت و ممنوعیت محتوای +۱۸.</p>
-  </aside>
-  <section class="content">
-    <section class="composer card">
-      <h2>چه چیزی در ذهن داری؟</h2>
-      <textarea id="postText" maxlength="1000" placeholder="یک نوشته تازه بنویس..."></textarea>
-      <div class="compose-row"><span class="tiny">حداکثر ۱۰۰۰ نویسه · بدون محتوای +۱۸</span><button id="publish" class="primary">انتشار پست</button></div>
+
+  <header>
+    <a class="logo" href="#">یسناگرام</a>
+    <nav>
+      <a href="#home">خانه</a>
+      <a href="#create">انتشار پست</a>
+      <a href="#about">درباره ما</a>
+    </nav>
+  </header>
+
+  <main class="container layout" id="home">
+
+    <aside class="sidebar">
+      <div class="profile-card">
+        <div class="avatar">ی</div>
+        <h3>به یسناگرام خوش آمدی</h3>
+        <p>یک شروع تازه برای ارتباط</p>
+      </div>
+      <a href="#home">🏠 صفحه اصلی</a>
+      <a href="#create">✍️ نوشتن پست</a>
+      <a href="#about">ℹ️ درباره یسناگرام</a>
+    </aside>
+
+    <section>
+      <div class="card" id="create">
+        <h2>چه چیزی در ذهن داری؟</h2>
+        <form id="postForm">
+          <textarea id="postInput" placeholder="متن خودت را بنویس..." required></textarea>
+          <button type="submit">انتشار پست</button>
+        </form>
+      </div>
+
+      <div class="search-box">
+        <input id="searchInput" type="search" placeholder="جست‌وجو در پست‌ها...">
+      </div>
+
+      <h2>آخرین پست‌ها</h2>
+      <div id="feed">
+        <article class="post">
+          <h3>یسناگرام شروع شد! 🎉</h3>
+          <p>به شبکه اجتماعی یسناگرام خوش آمدید. اینجا می‌توانیم ایده‌ها و نوشته‌هایمان را به اشتراک بگذاریم.</p>
+          <div class="post-actions">
+            <button type="button">♡ پسندیدن</button>
+          </div>
+        </article>
+      </div>
     </section>
-    <div class="section-head" id="feed"><h2>آخرین پست‌ها</h2><span class="tiny">نمایش آزمایشی</span></div>
-    <div id="posts"></div>
-  </section>
-  <aside class="right card"><h3>راهنمای جامعه</h3><p>با احترام گفتگو کن.</p><p>اطلاعات خصوصی دیگران را منتشر نکن.</p><p>محتوای جنسی و +۱۸ ممنوع است.</p><hr><h3 id="explore">کاوش</h3><p class="muted">به‌زودی موضوعات داغ اینجا نمایش داده می‌شوند.</p></aside>
-</main>
-<footer>© یسناگرام · نسخه اولیه</footer>
-<div class="modal hidden" id="authModal" role="dialog" aria-modal="true">
- <div class="modal-box card"><button class="close" id="authClose">×</button><h2>ورود یا ثبت‌نام</h2>
- <p class="muted">این نسخه نمایشی است؛ ورود واقعی پس از اتصال پایگاه داده فعال می‌شود.</p>
- <label>ایمیل<input type="email" placeholder="name@example.com" disabled></label>
- <label>گذرواژه<input type="password" placeholder="حداقل ۸ نویسه" disabled></label>
- <button class="primary" disabled>ادامه (نیازمند راه‌اندازی سرور)</button>
- </div>
-</div>
-<script src="app.js"></script>
-</body></html>
+
+  </main>
+
+  <footer id="about">
+    <p>یسناگرام؛ ارتباط، دوستی و خلاقیت</p>
+    <p>تمام حقوق محفوظ است.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
