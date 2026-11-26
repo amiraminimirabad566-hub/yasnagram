@@ -2,10 +2,9 @@
 
 :root {
   --primary: #7657f6;
-  --secondary: #ff6584;
-  --dark: #17152b;
+  --pink: #ff6584;
   --background: #f5f5fb;
-  --white: #ffffff;
+  --white: #fff;
   --text: #29263d;
   --muted: #85839a;
   --border: #eceaf4;
@@ -15,29 +14,21 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   direction: rtl;
   background: var(--background);
   color: var(--text);
-  font-family: 'Vazirmatn', Tahoma, sans-serif;
-}
-
-button, input, textarea {
-  font-family: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
+  font-family: Tahoma, sans-serif;
+  line-height: 1.8;
 }
 
 header {
-  background: var(--white);
+  background: white;
   border-bottom: 1px solid var(--border);
   padding: 15px 5%;
   display: flex;
@@ -51,18 +42,19 @@ header {
 .logo {
   color: var(--primary);
   font-size: 27px;
-  font-weight: 800;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 nav {
   display: flex;
-  gap: 25px;
-  align-items: center;
+  gap: 22px;
 }
 
 nav a {
-  font-size: 14px;
-  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: bold;
 }
 
 nav a:hover {
@@ -80,7 +72,10 @@ nav a:hover {
   gap: 25px;
 }
 
-.sidebar, .card, .post, .profile-card {
+.sidebar,
+.card,
+.post,
+.profile-card {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 18px;
@@ -91,74 +86,14 @@ nav a:hover {
 .sidebar a {
   display: block;
   padding: 12px;
+  color: var(--text);
+  text-decoration: none;
   border-radius: 10px;
 }
 
 .sidebar a:hover {
   background: #f1edff;
   color: var(--primary);
-}
-
-h1, h2, h3 {
-  margin-top: 0;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 13px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  outline: none;
-  background: #fafaff;
-  margin: 8px 0;
-  font-size: 14px;
-}
-
-input:focus, textarea:focus {
-  border-color: var(--primary);
-}
-
-textarea {
-  resize: vertical;
-  min-height: 90px;
-}
-
-button, .primary-button {
-  border: none;
-  border-radius: 12px;
-  padding: 11px 20px;
-  background: var(--primary);
-  color: white;
-  font-weight: 700;
-}
-
-button:hover, .primary-button:hover {
-  opacity: .88;
-}
-
-.post {
-  line-height: 2;
-}
-
-.post p {
-  white-space: pre-wrap;
-}
-
-.post-actions {
-  border-top: 1px solid var(--border);
-  padding-top: 12px;
-  margin-top: 12px;
-  display: flex;
-  gap: 10px;
-}
-
-.post-actions button {
-  background: #f1edff;
-  color: var(--primary);
-}
-
-.search-box {
-  margin-bottom: 20px;
 }
 
 .profile-card {
@@ -169,34 +104,78 @@ button:hover, .primary-button:hover {
   width: 85px;
   height: 85px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  margin: 0 auto 15px;
+  background: linear-gradient(135deg, var(--primary), var(--pink));
+  margin: auto;
   display: grid;
   place-items: center;
   color: white;
   font-size: 32px;
-  font-weight: 800;
+  font-weight: bold;
 }
 
-.modal {
-  position: fixed;
-  inset: 0;
-  background: #0009;
-  display: grid;
-  place-items: center;
-  z-index: 100;
-  padding: 20px;
+h1, h2, h3 {
+  margin-top: 0;
 }
 
-.modal[hidden] {
-  display: none;
+input,
+textarea,
+button {
+  font-family: inherit;
 }
 
-.modal-content {
-  background: white;
-  border-radius: 20px;
-  padding: 25px;
-  width: min(420px, 100%);
+input,
+textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary);
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  padding: 11px 20px;
+  background: var(--primary);
+  color: white;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: .88;
+}
+
+.post {
+  line-height: 2;
+  overflow-wrap: anywhere;
+}
+
+.post-actions {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.post-actions button {
+  background: #f1edff;
+  color: var(--primary);
+}
+
+.search-box {
+  margin-bottom: 20px;
 }
 
 footer {
